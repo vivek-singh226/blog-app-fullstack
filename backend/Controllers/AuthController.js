@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const UserModel = require("../Models/User");
 
@@ -9,7 +9,7 @@ const signup = async (req, res) => {
         const user = await UserModel.findOne({ email });
         if (user) {
             return res.status(409)
-                .json({ message: 'User is already exist, you can login', success: false });
+            .json({ message: 'User is already exist, you can login', success: false });
         }
         const userModel = new UserModel({ name, email, password });
         userModel.password = await bcrypt.hash(password, 10);
@@ -20,6 +20,7 @@ const signup = async (req, res) => {
                 success: true
             })
     } catch (err) {
+        console.log(err)
         res.status(500)
             .json({
                 message: "Internal server errror",
