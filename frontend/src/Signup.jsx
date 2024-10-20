@@ -34,7 +34,7 @@ function Signup() {
         </div>
         <button>Signup</button>
         <span> Already have an account ? 
-          <Link to="/login">Login</Link>
+         <a> <Link to="/login">Login</Link> </a>
         </span>
       </form>
 <ToastContainer />

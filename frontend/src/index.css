@@ -21,6 +21,7 @@ body{
     width: 100%;
 }
 body{
+    background-color:rgb(221, 221, 221);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,6 +39,10 @@ body{
 }
 
 .container > h1{
+    text-align: center;
+    color:mediumslateblue ;
+    font-size: 25px;
+    font-weight:800 ;
     margin-bottom: 20px ;
 }
 
@@ -48,6 +53,7 @@ body{
 }
 
 .container div{
+    font-style:initial;
     display: flex;
     flex-direction: column;
 }
@@ -61,3 +67,22 @@ body{
     border-bottom: 1px solid black ;
 }
 
+.container input::placeholder{
+    font-size: 12px;
+    font-style: italic;
+}
+
+.container button{
+    background-color:rgb(124, 54, 169);
+    color: rgb(250 250 250); 
+    border-color:black;
+   
+    
+}
+
+.container a {
+    color:crimson;
+    font-style: normal;
+    font-weight: 500;
+    
+}
