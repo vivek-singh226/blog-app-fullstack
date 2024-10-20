@@ -1,15 +1,30 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import {ToastContainer} from 'react-toastify';
+// import {handleError,handleSuccess} from '../utils';
 
 function Signup() {
+
+     const [signupInfo, setSignupInfo] = useState({
+      name: '',
+      email: '',
+      password: ''
+     })
+
+
+     const handleChange = (e)=>{
+     const { name, value} = e.target;
+      console.log(name, value);
+      
+     }
   return (
     <div className='container'>
       <h1>SIGNUP</h1>
-      <form>
+      <form> 
         <div>
           <label htmlFor='name'>Name </label>
           <input 
+         onChange={handleChange}
           type='text'
           name='name'
           autoFocus
@@ -19,6 +34,7 @@ function Signup() {
         <div>
           <label htmlFor='email'>Email</label>
           <input 
+          onChange={handleChange}
           type='email'
           name='email'
           placeholder='Enter your email'
@@ -27,6 +43,7 @@ function Signup() {
         <div>
           <label htmlFor='password'> Password </label>
           <input 
+          onChange={handleChange}
           type='password'
           name='password'
           placeholder='Enter your password'
